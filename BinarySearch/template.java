@@ -15,3 +15,17 @@ Public int firstFirstRed(int n){
     }
     return isRed(start) ? start : end;
 }
+
+//<= ensure mid = start = end can be returned
+while(start <= end){ 
+    int mid = start + (end - start)/2;
+    if(target == nums[mid]){
+        return mid;
+        }else if(target > nums[mid]){
+            start = mid + 1;
+            }else{
+                end = mid - 1;//end = mid may be wuxian xunhuan
+            }
+        }
+        return -1;
+  
