@@ -1,4 +1,4 @@
-/**285 recursion
+//285 recursion
 class Solution{
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p){
         if(root == null){
@@ -12,8 +12,9 @@ class Solution{
         }    
     }
 }
-*/
-/** Iteration
+
+
+//Iteration
 class Solution{
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p){
         if(root == null){
@@ -31,4 +32,3 @@ class Solution{
         return newroot;
     }
 }
-*/
