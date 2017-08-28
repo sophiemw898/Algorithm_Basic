@@ -17,15 +17,17 @@ Public int firstFirstRed(int n){
 }
 
 //<= ensure mid = start = end can be returned
-while(start <= end){ 
-    int mid = start + (end - start)/2;
-    if(target == nums[mid]){
-        return mid;
-        }else if(target > nums[mid]){
-            start = mid + 1;
-            }else{
-                end = mid - 1;//end = mid may be wuxian xunhuan
-            }
-        }
-        return -1;
+int binary_search(const int nums[], int start, int end, int target) {
+    while(start <= end){ 
+        int mid = start + (end - start)/2;
+        if(target == nums[mid]){
+            return mid;
+            }else if(target > nums[mid]){
+                start = mid + 1;
+                }else{
+                    end = mid - 1;//end = mid may be wuxian xunhuan
+                }
+     }
+     return -1;
+}
   
