@@ -19,3 +19,5 @@ class Solution {
         return -1;
     }
 }
+
+//用数组可将空间复杂度由O(N)降到O(1) int [] charCount = new int[26];
