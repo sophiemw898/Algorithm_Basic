@@ -12,22 +12,27 @@ and (
 order by t1.id
 
 # Write your MySQL query statement below
+
 select distinct *
 from stadium
-where people >= 100 
+where people >= 100
 and (
-((id -1 in (select id from stadium where people > 99 ))
-and
-(id -2 in (select id from stadium where people > 99 )))
+    ((id + 1 in (select id from stadium where people >= 100))
+    and 
+    (id + 2 in (select id from stadium where people >= 100))) 
+    
+    or 
+    ((id - 1 in (select id from stadium where people >= 100))
+    and 
+    (id + 1 in (select id from stadium where people >= 100)))
 
-or 
-((id -1 in (select id from stadium where people > 99 ))
-and 
-(id +1 in (select id from stadium where people > 99 )))
-  
-or 
-((id+1 in (select id from stadium where people > 99 ))
-and 
-(id+2 in (select id from stadium where people > 99 )))
+    or 
+    ((id - 1 in (select id from stadium where people >= 100))
+    and 
+    (id - 2 in (select id from stadium where people >= 100)))
 )
 order by id
+
+
+
+
