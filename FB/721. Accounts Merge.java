@@ -1,4 +1,11 @@
-//做graph， 找连通器
+/**
+Time Complexity: O(∑ailogai)
+O(∑ailogai), where ai is the length of accounts[i]. Without the log factor, this is the complexity to build the graph and search for each component. 
+The log factor is for sorting each component at the end.
+Space Complexity: O(∑ai)
+O(∑ai), the space used by our graph and our search.
+*/
+//做graph， 找连通器 BFS
 class Solution {
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
         Map<String, String> emailToName = new HashMap<>();
