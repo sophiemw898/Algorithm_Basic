@@ -1,3 +1,4 @@
+//O(mn) BFS
 class Solution {
     public void wallsAndGates(int[][] rooms) {
         if (rooms == null || rooms.length == 0 || rooms[0].length == 0) {
