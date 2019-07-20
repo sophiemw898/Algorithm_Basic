@@ -1,3 +1,10 @@
+//位运算
+class Solution {
+    public int hammingDistance(int x, int y) {
+        return Integer.bitCount(x ^ y);
+    }
+}
+
 //还有超级简单的位移算法
 class Solution {
     public int hammingDistance(int x, int y) {
