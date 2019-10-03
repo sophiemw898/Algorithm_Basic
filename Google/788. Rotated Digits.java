@@ -1,3 +1,6 @@
+//Time Complexity: O(NlogN). For each X, we check each digit.
+//Space Complexity: O(logN), the space stored either by the string, or the recursive call stack of the function good.
+
 class Solution {
     public int rotatedDigits(int N) {
         int res = 0;
