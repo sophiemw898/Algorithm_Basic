@@ -16,6 +16,8 @@ class Solution {
         int res = 1;
         Queue<int[]> queue = new LinkedList<>();
         queue.offer(new int[] {0, 0});
+        //use map to save the path and then print shortest path
+        Map<int[], int[]> map = new HashMap<>();
         
         while (!queue.isEmpty()) {
             int size = queue.size();
@@ -23,6 +25,12 @@ class Solution {
                 int[] curr = queue.poll();
                 
                 if (curr[0] == m - 1 && curr[1] == n - 1) {
+                    System.out.println(curr[0] + "," + curr[1]);
+                    while (map.containsKey(curr)) {
+                        System.out.println(map.get(curr)[0] + "," + map.get(curr)[1]);
+                        curr = map.get(curr);
+                    }
+                    
                     return res;
                 }
                 
@@ -30,8 +38,10 @@ class Solution {
                     int row = curr[0] + dirX[i];
                     int col = curr[1] + dirY[i];
                     if (row >= 0 && row < m && col >= 0 && col < n && grid[row][col] == 0) {
-                        queue.offer(new int[] {row, col});
+                        int[] next = new int[] {row, col};
+                        queue.offer(next);
                         grid[row][col] = 1;
+                        map.put(next, curr);
                     }
                 }
             }
