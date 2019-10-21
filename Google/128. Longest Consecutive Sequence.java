@@ -1,4 +1,4 @@
-//O(logn) O(1)
+//O(nlogn) O(1)
 class Solution {
     public int longestConsecutive(int[] nums) {
         if (nums == null) {
